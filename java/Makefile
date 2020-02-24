@@ -254,7 +254,7 @@ resolve_test_deps:
 	test -s "$(JAVA_HAMCR_JAR)" || cp $(MVN_LOCAL)/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar $(JAVA_TEST_LIBDIR) || curl -k -L -o $(JAVA_HAMCR_JAR) $(SEARCH_REPO_URL)org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
 	test -s "$(JAVA_MOCKITO_JAR)" || cp $(MVN_LOCAL)/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar $(JAVA_TEST_LIBDIR) || curl -k -L -o "$(JAVA_MOCKITO_JAR)" $(SEARCH_REPO_URL)org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar
 	test -s "$(JAVA_CGLIB_JAR)" || cp $(MVN_LOCAL)/cglib/cglib/2.2.2/cglib-2.2.2.jar $(JAVA_TEST_LIBDIR) || curl -k -L -o "$(JAVA_CGLIB_JAR)" $(SEARCH_REPO_URL)cglib/cglib/2.2.2/cglib-2.2.2.jar
-	test -s "$(JAVA_ASSERTJ_JAR)" || cp $(MVN_LOCAL)/org/assertj/assertj-core/1.7.1/assertj-core-1.7.1.jar $(JAVA_TEST_LIBDIR) || curl -k -L -o "$(JAVA_ASSERTJ_JAR)" $(CENTRAL_REPO_URL)org/assertj/assertj-core/1.7.1/assertj-core-1.7.1.jar
+	test -s "$(JAVA_ASSERTJ_JAR)" || cp $(MVN_LOCAL)/org/assertj/assertj-core/1.7.1/assertj-core-1.7.1.jar $(JAVA_TEST_LIBDIR) || curl -k -L -o "$(JAVA_ASSERTJ_JAR)" $(SEARCH_REPO_URL)org/assertj/assertj-core/1.7.1/assertj-core-1.7.1.jar
 
 java_test: java resolve_test_deps
 	$(AM_V_GEN)mkdir -p $(TEST_CLASSES)
